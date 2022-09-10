@@ -1,0 +1,68 @@
+doctype html
+
+html
+    head
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        link(href='//db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember' rel='stylesheet' type='text/css')
+
+        style.
+            body {
+
+            }
+            .loading-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top:45%
+            }
+            .loading-wrapper {
+                display: flex;
+                flex-direction: column;
+                width: 240px;
+                align-items: center;
+            }
+            .loading-text {
+                margin-top:30px;
+                text-align: center;
+                font-family: "Amazon Ember";
+                color: #999;
+                line-height: 24px;
+            }
+            .sbl-circ-path {
+                height: 60px;
+                width: 60px;
+                color: rgba(90, 90, 90, 0.2);
+                position: relative;
+                display: inline-block;
+                border: 3px solid;
+                border-radius: 50%;
+                border-right-color: #0098FF;
+                animation: rotate 1s linear infinite;
+            }
+
+            @keyframes rotate {
+                0% {
+                    transform: rotate(0);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+    body
+        if page && page !== 'consent_blank'
+            #spinner.loading-container
+                .loading-wrapper
+                    .sbl-circ-path
+                    .loading-text
+                        span(onclick='initAuth({}, {}, "", function (){})') Securely signing you into your Amazon account
+
+        script(src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous")
+        script(src="/javascripts/sso.js")
+        case page
+            when 'testsso'
+                include js/autoRedirectTestSSO
+            when 'consent'
+                include js/autoRedirectUniversialLinkSpinner
+            when 'consent_blank'
+                include js/autoRedirectUniversialLinkBlank

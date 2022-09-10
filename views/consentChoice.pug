@@ -1,0 +1,13 @@
+doctype html
+
+head
+body
+form(action='/consent/edit' id='consentChoice' method='post')
+
+    label(for='pageStyle') Choose a consent page style:
+    select#pageStyle(name='consentPage' form='consentChoice')
+        option(value='0' selected=(consentPage == 0)) Consent Page
+        option(value='1' selected=(consentPage == 1)) Spinner
+        option(value='2' selected=(consentPage == 2)) Clean Redirect
+
+    input(type='submit')

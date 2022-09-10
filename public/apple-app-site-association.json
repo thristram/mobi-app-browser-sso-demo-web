@@ -38,6 +38,18 @@
           }
         ]
       },
+      {
+        "appID": "94KV3E626L.com.amazon.MAPiOSLibSampleApp",
+        "paths": [
+          "/*"
+        ],
+        "components": [
+          {
+            "/": "/*",
+            "comment": "Match all routes"
+          }
+        ]
+      },
 
       {
         "appID": "CS4X329SHV.com.mars.Option2",
@@ -52,5 +64,8 @@
         ]
       }
     ]
+  },
+  "webcredentials": {
+    "apps": [ "WBZ6T2AKNS.mobi.com-ackapp-mobitest", "WBZ6T2AKNS.com.example.apple-samplecode.ShinyWBZ6T2AKNS", "com.example.apple-samplecode.ShinyTest" ]
   }
 }

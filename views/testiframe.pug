@@ -1,0 +1,13 @@
+html
+    head
+        meta(name='viewport' content='width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no')
+    body
+        iframe(src="https://www.cam-recorder.com/" style="height: 80%; width: 100%; position: fixed; top: 0; left: 0")
+        a(href="https://redirect.ackapp.com/ivvlanding?type=close" style="height: 20%; width: 100%; position: fixed; bottom: 0; left: 0") Done
+        script.
+            setTimeout(function (){
+                closePage()
+            }, 5000)
+            function closePage (){
+                window.location.href = "https://redirect.ackapp.com/ivvlanding?type=close"
+            }

@@ -1,0 +1,93 @@
+doctype html
+// saved from url=(0078)https://www.amazon.com/ap/cvf/request?arb=82c4a3f4-5270-4e0b-8e1e-e195d4b08234
+html(class="a-touch a-mobile a-js a-audio a-video a-canvas a-svg a-drag-drop a-geolocation a-history a-webworker a-autofocus a-input-placeholder a-textarea-placeholder a-local-storage a-orientation a-touch a-gradients a-hires a-transform3d a-touch-scrolling a-android a-mobile a-text-shadow a-text-stroke a-box-shadow a-border-radius a-border-image a-opacity a-transform a-transition a-ember" data-19ax5a9jf="mongoose" data-aui-build-date="3.21.9-2022-04-07")
+    head
+        meta(http-equiv='Content-Type' content='text/html; charset=UTF-8')
+        meta(name='viewport' content='width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no')
+        meta(name='robots' content='noindex, nofollow')
+        title(dir='ltr') Authentication required
+        link(rel='stylesheet' href='/stylesheets/combined.css')
+        link(rel='stylesheet' href='/stylesheets/11vE0hkmjcL.css')
+        link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css')
+        script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js')
+        style.
+            #aa-challenge-whole-page-iframe {
+                overflow:hidden;
+                opacity:1.0;
+                position:fixed;
+                top:0px;
+                bottom:0px;
+                right:0px;
+                border:none;
+                margin:0;
+                padding:0;
+                height:100%;
+                width:100%;
+                z-index:999999;
+            }
+
+            .logs {
+                display: block;
+                overflow-wrap: normal;
+                padding: 1em;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #400 #700 #700 #400;
+                border-radius: 3px;
+            }
+    #a-page
+
+        .a-section.a-padding-base
+            .a-section.cvf-widget-container
+                .a-section.cvf-page-layout
+                    #cvf-page-content.a-section()
+                        .a-row.a-spacing-none
+                            form#verification-code-form.cvf-widget-form.fwcim-form.a-spacing-none()
+
+
+                                .a-row.a-spacing-small(style='margin-top:20px')
+                                    .a-row.a-spacing-small
+                                        h1(style='font-size: 24px') Hi, Jane
+
+                                .a-row.a-spacing-small(style='padding-bottom: 20px;')
+                                    span(style="font-size:18px;font-weight:400")
+                                        | Do you want to allow your Amazon account to get fast, free Prime delivery on other websites?
+                                .a-row.a-spacing-small
+                                    a(href="javascript:;" onclick="startAuth()")
+                                        span#cvf-submit-otp-button.a-button.a-button-span12.a-button-primary.cvf-widget-btn.cvf-widget-btn-verify
+                                            span.a-button-inner
+                                                input.a-button-input(aria-labelledby='cvf-submit-otp-button-announce')
+                                                span#cvf-submit-otp-button-announce.a-button-text(aria-hidden='true') Continue
+
+                        .a-row.a-spacing-none
+                        .a-row.a-spacing-small.a-spacing-top-small
+        .a-row.auth-footer
+            style.
+                .auth-footer-separator {
+                    display: inline-block;
+                    width: 20px;
+                }
+            .a-divider.a-divider-section
+                .a-divider-inner
+            #footer.a-section
+                .a-section.a-spacing-small.a-text-center.a-size-mini
+                    span.auth-footer-separator
+                    a.a-link-normal(rel='noopener' href='javascript:;' style="font-size:16px" onclick="cancelAuth()")
+                        | Back to Browser
+                    span.auth-footer-separator
+        #log
+            pre
+                code.logs.log()
+
+    #a-white
+    #a-popover-root(style='z-index:-1;position:absolute;')
+    script(src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous")
+    script(type="text/javascript").
+        var MAPParams = !{JSON.stringify(query)}
+    script(src="/javascripts/map.js")
+    script(src="/javascripts/consent_app.js")
+    script.
+        $(function () {
+            getCurrentAppInfo()
+        })
+

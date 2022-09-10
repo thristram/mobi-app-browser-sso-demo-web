@@ -6,10 +6,18 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@fidm/x509": "^1.2.0",
+    "apn": "^2.2.0",
+    "apns2": "^10.1.0",
+    "base64url": "^2.0.0",
+    "cbor": "^3.0.3",
     "cookie-parser": "~1.4.4",
+    "cookie-session": "^2.0.0-beta.3",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "iso-3166-1": "^1.1.0",
+    "js-profiler": "^2.5.5",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11"
   }

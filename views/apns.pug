@@ -1,0 +1,64 @@
+doctype html
+head
+    meta(charset='utf-8')
+    title Report Email Client - !{title}
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    // Loading Bootstrap
+    link(href='/flat-ui/css/vendor/bootstrap.min.css' rel='stylesheet')
+    // Loading Flat UI
+    link(href='/flat-ui/css/flat-ui.css' rel='stylesheet')
+    link(rel='shortcut icon' href='/flat-ui/favicon.ico')
+
+body
+    .address-container(style="")
+
+        form.address-bar.container(style="margin-top:20px" method="post" action="/apns")
+            .row
+                .col-2
+                    h6 Team ID
+                .col-10
+                    .form-group
+
+                        input.tagsinput.form-control.email-select(type='text' name="teamID")
+
+            .row
+                .col-2
+                    h6 key ID
+                .col-10
+                    .form-group
+                        input.form-control.email-select(type='text' name="keyID")
+
+            .row.bcc-layout
+                .col-2
+                    h6 Title
+                .col-10
+                    .form-group
+                        input.form-control.email-select(type='text' name="title")
+            .row
+                .col-2
+                    h6 Bundle ID
+                .col-10
+                    .form-group
+                        input#title.form-control(type='text' name="bundleID")
+            .row
+                .col-2
+                    h6 device Token
+                .col-10
+                    .form-group
+                        input#title.form-control(type='text' name="deviceToken")
+            .row
+                .col-2
+                    h6 Payload
+                .col-10
+                    .form-group
+                        textarea#title.form-control(type='text' name="payload")
+            .col
+                input.btn.btn-block.btn-lg.btn-primary( type="submit" value='Send Push Notification')
+
+        // jQuery (necessary for Bootstrap's JavaScript plugins)
+        script(src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous')
+        // Bootstrap 4 requires Popper.js
+        script(src='https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js' crossorigin='anonymous')
+        script(src='/flat-ui/scripts/flat-ui.js')
+
+        script(src='/flat-ui/assets/js/application.js')

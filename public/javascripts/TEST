@@ -1,0 +1,29 @@
+
+
+{{tabs idsToLabels='MAIN-NA=Service Dashboard, API-NA=API Specific, Rootcause-NA=Rootcause, Alpine-NA=Alpine, Retry-NA=Retry and Cache' /}}
+
+
+(% id="MAIN-NA" %)
+(((
+{{transclude name="space:IdentityServices.PandaService.Dashboard.Prod.NA" /}}
+)))
+
+(% id="API-NA" %)
+(((
+{{transclude name="space:IdentityServices.PandaService.Dashboard.Prod.NA.API-Specific" /}}
+)))
+
+(% id="Rootcause-NA" %)
+(((
+{{transclude name="space:IdentityServices.PandaService.Dashboard.Prod.NA.RootcauseGraphs" /}}
+)))
+
+(% id="Alpine-NA" %)
+(((
+{{transclude name="space:IdentityServices.PandaService.Dashboard.Prod.NA.Alpine" /}}
+)))
+
+(% id="Retry-NA" %)
+(((
+{{transclude name="space:IdentityServices.PandaService.Dashboard.Prod.NA.Retry-Cache_Metrics" /}}
+)))
