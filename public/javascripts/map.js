@@ -130,9 +130,9 @@
         paramObj.token = token;
 
         // 2.1 Call FidoAuthenticatorJSBridge or APPToBrowserSSOJSBridge
-        if (typeof window.FidoAuthenticatorJSBridge[originalFunction] === 'function') {
+        if (typeof window.FidoAuthenticatorJSBridge !== 'undefined' && typeof window.FidoAuthenticatorJSBridge[originalFunction] === 'function') {
             window.FidoAuthenticatorJSBridge[originalFunction](JSON.stringify(paramObj));
-        } else if (typeof window.APPToBrowserSSOJSBridge[originalFunction] === 'function') {
+        } else if (typeof window.APPToBrowserSSOJSBridge !== 'undefined' && typeof window.APPToBrowserSSOJSBridge[originalFunction] === 'function') {
             window.APPToBrowserSSOJSBridge[originalFunction](JSON.stringify(paramObj));
         }
 
@@ -352,7 +352,9 @@
         }
 
         static isAndroidSupported() {
-            if ((typeof window.MAPAndroidJSBridge !== 'undefined' && typeof window.MAPAndroidJSBridge.getMAPAndroidBridgeVersion !== 'undefined') || (typeof window.FidoAuthenticatorJSBridge !== 'undefined' && typeof window.FidoAuthenticatorJSBridge.getCurrentAppInfo !== 'undefined')) {
+            if ((typeof window.MAPAndroidJSBridge !== 'undefined' && typeof window.MAPAndroidJSBridge.getMAPAndroidBridgeVersion !== 'undefined') 
+            || (typeof window.FidoAuthenticatorJSBridge !== 'undefined' && typeof window.FidoAuthenticatorJSBridge.getCurrentAppInfo !== 'undefined')
+            || (typeof window.APPToBrowserSSOJSBridge !== 'undefined')) {
                 return true;
             }
             return false;
