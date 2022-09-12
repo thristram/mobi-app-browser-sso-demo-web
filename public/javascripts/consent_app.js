@@ -125,7 +125,7 @@ function getAuthCode(directedId, authChallenge, callback){
 
             }
 
-        }, 1000)
+        }, 100000)
     }   catch (e){
         handleError({error: e.message})
     }
@@ -146,7 +146,7 @@ function getCurrentAccount(callback){
                 }
                 callback(result)
             }
-        }, 1000)
+        }, 10000)
     }   catch (e){
         handleError({error: e.message})
     }

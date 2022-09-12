@@ -4,7 +4,7 @@ const path = require('path')
 const fs = require('fs')
 const apn = require('apn');
 const APSignInURL = "https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&"
-
+const initAuth = require('../sso/initAuth')
 var config = require('../config.json')
 
 /* GET home page. */
@@ -58,7 +58,7 @@ router.get('/consent', function(req, res, next) {
   }
 
 });
-router.get('/atb/mshop/v1', function(req, res, next) {
+router.get(['/atb/mshop/v1', "/a/atb/consnet", "/a/c/atb/consnet"], function(req, res, next) {
   let data = {
     // redirectTo : req.query["redirect_to"] || "https://www.amazon.com",
 
@@ -93,6 +93,27 @@ router.get('/consents', function(req, res, next) {
 router.get('/apns', function(req, res, next) {
 
   res.render("apns")
+});
+router.get('/atb/link', function(req, res, next) {
+  let link = initAuth.initAuth(
+      {'completeSignInURL': 'https://www.amazon.com/ap/signin'},
+      {
+          'overrideResult': 'test_result',
+          merchantId: "ABCD", // optional, might exist for Apay case
+          clientId: "EFGH", // optional, might exist for LWA case
+          accountPool: ["Amazon", "AmazonJP"],
+          language: "en_US",
+          applicationName: "APay",
+          applicationContext: "BuyWithPrime",
+          environment: 'prod', // 'prod' or 'devo' to indicate the current environment
+          consentUI: 'NoConsent' // or 'Consent'
+      },
+      'mShop',
+      function (){}
+  )
+  console.log(link)
+  res.send(`<a href="${link}">${link}</a>`)
+  // res.render("apns")
 });
 router.post('/apns', async function(req, res, next) {
   try {
@@ -139,3 +160,6 @@ router.get('/.well-known/apple-app-site-association', function(req, res, next) {
   res.json(content)
 });
 module.exports = router;
+
+
+

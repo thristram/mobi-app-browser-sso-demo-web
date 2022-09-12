@@ -35,6 +35,47 @@ html(class="a-touch a-mobile a-js a-audio a-video a-canvas a-svg a-drag-drop a-g
                 border-color: #400 #700 #700 #400;
                 border-radius: 3px;
             }
+
+            .button:active {
+                background: #007a63;
+            }
+
+            .button__text {
+                font: bold 20px "Quicksand", san-serif;
+                color: #ffffff;
+                transition: all 0.2s;
+            }
+
+            .button--loading .button__text {
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            .button--loading::after {
+                content: "";
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                border: 4px solid transparent;
+                border-top-color: #ffffff;
+                border-radius: 50%;
+                animation: button-loading-spinner 1s ease infinite;
+            }
+
+            @keyframes button-loading-spinner {
+                from {
+                    transform: rotate(0turn);
+                }
+
+                to {
+                    transform: rotate(1turn);
+                }
+            }
     #a-page
 
         .a-section.a-padding-base
@@ -53,7 +94,7 @@ html(class="a-touch a-mobile a-js a-audio a-video a-canvas a-svg a-drag-drop a-g
                                     span(style="font-size:18px;font-weight:400")
                                         | Do you want to allow your Amazon account to get fast, free Prime delivery on other websites?
                                 .a-row.a-spacing-small
-                                    a(href="javascript:;" onclick="startAuth()")
+                                    a#consent-submit-button(href="javascript:;" onclick="consentButtonClick()")
                                         span#cvf-submit-otp-button.a-button.a-button-span12.a-button-primary.cvf-widget-btn.cvf-widget-btn-verify
                                             span.a-button-inner
                                                 input.a-button-input(aria-labelledby='cvf-submit-otp-button-announce')
@@ -72,7 +113,7 @@ html(class="a-touch a-mobile a-js a-audio a-video a-canvas a-svg a-drag-drop a-g
             #footer.a-section
                 .a-section.a-spacing-small.a-text-center.a-size-mini
                     span.auth-footer-separator
-                    a.a-link-normal(rel='noopener' href='javascript:;' style="font-size:16px" onclick="cancelAuth()")
+                    a#conset-cancel-button.a-link-normal(rel='noopener' href='javascript:;' style="font-size:16px" onclick="cancelAuth()")
                         | Back to Browser
                     span.auth-footer-separator
         #log
@@ -87,6 +128,15 @@ html(class="a-touch a-mobile a-js a-audio a-video a-canvas a-svg a-drag-drop a-g
     script(src="/javascripts/map.js")
     script(src="/javascripts/consent_app.js")
     script.
+        function consentButtonClick(){
+            const btn = $("#consent-submit-button>span>span");
+
+            btn.addClass("button--loading");
+            $('#cvf-submit-otp-button-announce').html(".")
+            $('#cvf-submit-otp-button-announce').css({"color": "#FFD814"})
+            startAuth()
+            // btn.classList.remove("button--loading");
+        }
         $(function () {
             getCurrentAppInfo()
         })
