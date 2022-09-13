@@ -134,6 +134,8 @@
             window.FidoAuthenticatorJSBridge[originalFunction](JSON.stringify(paramObj));
         } else if (typeof window.APPToBrowserSSOJSBridge !== 'undefined' && typeof window.APPToBrowserSSOJSBridge[originalFunction] === 'function') {
             window.APPToBrowserSSOJSBridge[originalFunction](JSON.stringify(paramObj));
+        } else if (typeof window.MAPAndroidJSBridge !== 'undefined' && typeof window.MAPAndroidJSBridge[originalFunction] === 'function') {
+            window.MAPAndroidJSBridge[originalFunction](JSON.stringify(paramObj));
         }
 
         // 3. Delete the div
