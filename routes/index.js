@@ -96,7 +96,7 @@ router.get('/apns', function(req, res, next) {
 });
 router.get('/atb/link', function(req, res, next) {
   let link = initAuth.initAuth(
-      {'completeSignInURL': 'https://www.amazon.com/ap/signin'},
+      {'completeSignInURL': req.query.url || 'https://www.amazon.com/ap/signin'},
       {
           'overrideResult': 'test_result',
           merchantId: "ABCD", // optional, might exist for Apay case
@@ -106,7 +106,7 @@ router.get('/atb/link', function(req, res, next) {
           applicationName: "APay",
           applicationContext: "BuyWithPrime",
           environment: 'prod', // 'prod' or 'devo' to indicate the current environment
-          consentUI: 'NoConsent' // or 'Consent'
+          consentUI: req.query.consent_ui === 'Consent' ? 'Consent' : 'NoConsent' // or 'Consent'
       },
       'mShop',
       function (){}

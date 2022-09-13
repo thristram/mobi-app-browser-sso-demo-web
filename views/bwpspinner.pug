@@ -3,7 +3,7 @@ doctype html
 html
     head
         meta(name='viewport' content='width=device-width, initial-scale=1')
-        link(href='//db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember' rel='stylesheet' type='text/css')
+
         link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css')
         script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js')
         style.
@@ -31,7 +31,7 @@ html
             .loading-text {
                 margin-top:30px;
                 text-align: center;
-                font-family: "Amazon Ember";
+                font-family: "Amazon Ember",Arial,sans-serif;;
                 color: #0F1111;
                 line-height: 24px;
             }
@@ -99,6 +99,66 @@ html
                 border-color: #400 #700 #700 #400;
                 border-radius: 3px;
             }
+
+            @font-face {
+                font-family: 'Amazon Ember';
+                font-weight: 200;
+                src: url(https://m.media-amazon.com/images/S/sash/Dv1WQ5DdeMS5qP7.woff2) format("woff2"), url(https://m.media-amazon.com/images/S/sash/e0LnMbFWJC-TMQz.woff) format("woff")
+            }
+
+            @font-face {
+                font-family: 'Amazon Ember';
+                font-weight: 200;
+                font-style: italic;
+                src: url(https://m.media-amazon.com/images/S/sash/ozb5-CLHQWI6Soc.woff2) format("woff2"), url(https://m.media-amazon.com/images/S/sash/twzZHebXjCHBb6v.woff) format("woff")
+            }
+
+            @font-face {
+                font-family: 'Amazon Ember';
+                src: url(https://m.media-amazon.com/images/S/sash/pDxWAF1pBB0dzGB.woff2) format("woff2"), url(https://m.media-amazon.com/images/S/sash/kfKKBuoqcD$AUKL.woff) format("woff")
+            }
+
+            @font-face {
+                font-family: 'Amazon Ember';
+                font-style: italic;
+                src: url(https://m.media-amazon.com/images/S/sash/WOnTLzkiaEccV7F.woff2) format("woff2"), url(https://m.media-amazon.com/images/S/sash/JJsp0ZvgpfwzJM6.woff) format("woff")
+            }
+
+            @font-face {
+                font-family: 'Amazon Ember';
+                font-weight: 500;
+                src: url(https://m.media-amazon.com/images/S/sash/VjTR4RqBzY0mUYx.woff2) format("woff2"), url(https://m.media-amazon.com/images/S/sash/XIvhNCZAsrT80Wz.woff) format("woff")
+            }
+
+            @font-face {
+                font-family: 'Amazon Ember';
+                font-weight: 500;
+                font-style: italic;
+                src: url(https://m.media-amazon.com/images/S/sash/KwhNPG8Jz-Vz2X7.woff2) format("woff2"), url(https://m.media-amazon.com/images/S/sash/YAEPfuhs1l-argd.woff) format("woff")
+            }
+
+            @font-face {
+                font-family: 'Amazon Ember';
+                font-weight: 700;
+                src: url(https://m.media-amazon.com/images/S/sash/KFPk-9IF4FqAqY-.woff2) format("woff2"), url(https://m.media-amazon.com/images/S/sash/mzVbGSgvdBfRLX9.woff) format("woff")
+            }
+
+            @font-face {
+                font-family: 'Amazon Ember';
+                font-style: italic;
+                font-weight: 700;
+                src: url(https://m.media-amazon.com/images/S/sash/2SazJx$EeTHfhMN.woff2) format("woff2"), url(https://m.media-amazon.com/images/S/sash/CjbL$jCCegyfqZ7.woff) format("woff")
+            }
+
+            .a-ember body {
+                font-family: "Amazon Ember", Arial, sans-serif
+            }
+
+            .a-ember .a-text-quote {
+                font-family: "Amazon Ember", Arial, sans-serif
+            }
+
+            /*
 
     body
         #logo(style="text-align:center;")
